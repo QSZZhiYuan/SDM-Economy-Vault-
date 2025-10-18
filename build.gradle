@@ -42,9 +42,6 @@ subprojects {
         // If you remove this line, sources will not be generated.
         withSourcesJar()
 
-        // Use Java 17 toolchain for compilation (compatible with Minecraft 1.20.1)
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
-        
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
