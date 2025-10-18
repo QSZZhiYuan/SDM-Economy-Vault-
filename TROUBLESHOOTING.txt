@@ -1,0 +1,71 @@
+========================================
+SDM-Economy Build Troubleshooting Guide
+========================================
+
+ERROR: "Failed to remap minecraft"
+SOLUTION: Use FIX_AND_BUILD.bat
+
+This error occurs when Gradle's Loom cache becomes corrupted.
+The FIX_AND_BUILD.bat script will:
+1. Stop all Gradle processes
+2. Delete all project build files
+3. Clean global Gradle caches
+4. Clean Loom-specific caches
+5. Rebuild everything from scratch
+
+STEPS:
+1. Double-click FIX_AND_BUILD.bat
+2. Press any key when prompted
+3. Wait 15-20 minutes for complete rebuild
+4. Check forge\build\libs\ for the JAR file
+
+========================================
+What Gets Deleted:
+========================================
+PROJECT FILES:
+- build/
+- .gradle/
+- common/build/
+- forge/build/
+
+GLOBAL GRADLE CACHE:
+- %USERPROFILE%\.gradle\caches\fabric-loom
+- %USERPROFILE%\.gradle\caches\modules-2\files-2.1\dev.architectury
+- %USERPROFILE%\.gradle\caches\forge_gradle
+- %USERPROFILE%\.gradle\caches\minecraft
+- %USERPROFILE%\.gradle\loom-cache
+
+Don't worry - these will be re-downloaded automatically.
+
+========================================
+Still Having Problems?
+========================================
+
+PROBLEM: "Cannot find JDK 17"
+SOLUTION: Download and install JDK 17 from:
+https://adoptium.net/temurin/releases/?version=17
+
+PROBLEM: Build takes forever
+SOLUTION: This is normal for first build (15-25 minutes)
+The script downloads Minecraft, Forge, and all dependencies.
+
+PROBLEM: "Access denied" when deleting caches
+SOLUTION: 
+1. Close any open Gradle processes in Task Manager
+2. Run FIX_AND_BUILD.bat as Administrator
+
+PROBLEM: Still getting remap errors
+SOLUTION:
+1. Manually delete: %USERPROFILE%\.gradle\caches
+2. Restart computer
+3. Run FIX_AND_BUILD.bat again
+
+========================================
+Send Me This Info If Build Fails:
+========================================
+1. Full error message (copy everything from CMD window)
+2. Your Java version: java -version
+3. Your Gradle version: gradlew.bat --version
+4. Screenshot of the error
+
+========================================

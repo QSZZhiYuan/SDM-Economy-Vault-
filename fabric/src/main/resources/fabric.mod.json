@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "sdmeconomy",
+  "version": "${version}",
+  "name": "SDMEconomy",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "MIT",
+  "icon": "assets/sdmeconomy/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.sixik.sdmeconomy.fabric.SDMEconomyFabric"
+    ],
+    "client": [
+      "net.sixik.sdmeconomy.fabric.client.SDMEconomyFabricClient"
+    ]
+  },
+  "mixins": [
+    "sdmeconomy.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
